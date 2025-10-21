@@ -1,2 +1,169 @@
-<!doctype html><title>ROOT-TEST</title>
-<h1>ROOT-TEST</h1><p>v1</p>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sukgyu Shin — Economics</title>
+  <meta name="description" content="Sukgyu Shin — Economics" />
+  <style>
+    /* Minimal, academic, print-friendly */
+    :root{
+      --max: 880px;
+      --accent: #0a5; /* tweak if you want */
+      --muted:#6b7280;
+    }
+    html,body{margin:0;padding:0}
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.65; color:#111; background:#fff;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{
+      max-width:var(--max); margin:0 auto; padding:48px 18px 24px 18px;
+      display:grid; grid-template-columns: 1fr auto; gap:20px; align-items:center;
+      border-bottom:1px solid #eee;
+    }
+    h1{font-size:clamp(1.6rem,4vw,2.2rem); margin:0 0 4px 0}
+    .tagline{color:var(--muted); margin:0}
+    .nav{
+      display:flex; flex-wrap:wrap; gap:14px; margin-top:8px;
+    }
+    .nav a{padding:2px 0}
+    .headshot{
+      width:104px; height:104px; border-radius:50%; object-fit:cover; border:1px solid #eee;
+      display:block;
+    }
+    main{max-width:var(--max); margin:0 auto; padding:24px 18px 64px 18px}
+    section{margin:28px 0}
+    h2{font-size:1.2rem; margin:0 0 12px 0}
+    .card{border:1px solid #eee; border-radius:12px; padding:16px 18px; margin:12px 0}
+    .pub{margin:10px 0}
+    .pub .title{font-weight:600}
+    .pub .meta{color:var(--muted); font-size:.95rem}
+    .list-clean{margin:0; padding-left:18px}
+    .btn{
+      display:inline-block; border:1px solid #ddd; border-radius:999px; padding:8px 14px;
+      text-decoration:none; color:#111; background:#fafafa;
+    }
+    .btn:hover{background:#f2f2f2}
+    footer{
+      max-width:var(--max); margin:0 auto; padding:20px 18px 48px 18px; color:var(--muted); font-size:.95rem
+    }
+    /* Small screens */
+    @media (max-width:600px){
+      header{grid-template-columns:1fr; text-align:left}
+      .headshot{justify-self:start}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Your Name</h1>
+      <p class="tagline">Ph.D. Student, Economics • University / Department</p>
+      <div class="nav">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <!-- Optional headshot: add headshot.jpg to repo root and uncomment -->
+    <!-- <img src="headshot.jpg" alt="Your Name" class="headshot"> -->
+  </header>
+
+  <main>
+    <section id="about" class="card">
+      <h2>About</h2>
+      <p>
+        I am a Ph.D. student in Economics at <em>Your University</em>. My research interests include
+        applied econometrics, dynamic discrete choice, and industrial organization. I’m currently
+        working on identification and estimation in nonlinear panel models with state dependence.
+      </p>
+      <p>
+        <strong>Fields:</strong> Econometrics, IO, Microeconomics<br>
+        <strong>Email:</strong> <a href="mailto:you@university.edu">you@university.edu</a>
+      </p>
+    </section>
+
+    <section id="research">
+      <h2>Research</h2>
+
+      <div class="card">
+        <h3 style="margin-top:0">Working Papers</h3>
+        <div class="pub">
+          <div class="title"><a href="papers/paper1.pdf">Point Identification in Dynamic Nonlinear Panels with Feedback</a></div>
+          <div class="meta">Your Name (2025). Working paper.</div>
+          <div>Abstract: Brief 1–3 sentence summary of the contribution and results.</div>
+        </div>
+
+        <div class="pub">
+          <div class="title"><a href="papers/paper2.pdf">Sufficient Statistics and CMLE in Dynamic Logit</a></div>
+          <div class="meta">Your Name & Coauthor (2025). Draft available upon request.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-top:0">Publications</h3>
+        <div class="pub">
+          <div class="title">Title of Published Paper</div>
+          <div class="meta"><em>Journal Name</em>, vol(issue), pages, year.</div>
+          <div><a href="papers/published.pdf">PDF</a> · <a href="https://doi.org/XXXX">DOI</a> · <a href="bib/paper.bib">BibTeX</a></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-top:0">Work in Progress</h3>
+        <ul class="list-clean">
+          <li>Project A — short one-line description.</li>
+          <li>Project B — short one-line description.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="teaching" class="card">
+      <h2>Teaching</h2>
+      <ul class="list-clean">
+        <li><strong>Econometrics I (TA)</strong>, Fall 2025 — office hours Tue/Thu 2–4pm.</li>
+        <li><strong>Industrial Organization (grader)</strong>, Spring 2025.</li>
+      </ul>
+      <p>Course materials: <a href="teaching/econ-metrics-f25/syllabus.pdf">Syllabus</a>, <a href="teaching/econ-metrics-f25/problem-set-1.pdf">Problem Set 1</a></p>
+    </section>
+
+    <section id="cv" class="card">
+      <h2>CV</h2>
+      <p>
+        <a class="btn" href="cv.pdf">Download CV (PDF)</a>
+        <!-- Optional: Google Scholar / GitHub / SSRN -->
+        &nbsp; <a href="https://scholar.google.com/">Google Scholar</a> ·
+        <a href="https://github.com/park123">GitHub</a> ·
+        <a href="https://www.ssrn.com/">SSRN</a>
+      </p>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p>
+        Department of Economics, Your University<br>
+        123 Academic Way, City, ST ZIP<br>
+        Email: <a href="mailto:you@university.edu">you@university.edu</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="y"></span> Your Name · Last updated <span id="d"></span>
+  </footer>
+
+  <script>
+    // Auto-fill year and a simple last-updated stamp
+    const y = new Date().getFullYear();
+    document.getElementById('y').textContent = y;
+    const d = new Date();
+    document.getElementById('d').textContent = d.toISOString().slice(0,10);
+  </script>
+</body>
+</html>
+
