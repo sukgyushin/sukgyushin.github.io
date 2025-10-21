@@ -3,54 +3,109 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sukgyu Shin</title>
+  <title>Sukgyu Shin — Economics</title>
   <style>
-    /* minimal: only the top bar */
-    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-    .bar {
-      border-bottom: 1px solid #eee;
-      background: #fff;
+    /* Base */
+    html { scroll-behavior: smooth; }
+    body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; line-height:1.65; color:#111; }
+    a { color:#0366d6; text-decoration:none; } a:hover{ text-decoration:underline; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+    section { margin:28px 0; scroll-margin-top:72px; }
+    .card { border:1px solid #eee; border-radius:12px; padding:16px 18px; }
+
+    /* TOP BAR — left-aligned, bigger buttons */
+    .bar { position:sticky; top:0; z-index:10; background:#fff; border-bottom:1px solid #eee; }
+    .bar-inner { display:flex; align-items:center; justify-content:flex-start; gap:20px; padding:12px 0; }
+    .brand { font-weight:700; color:#111; text-decoration:none; }
+    .nav { display:flex; gap:10px; flex-wrap:wrap; }
+    .nav .tab {
+      font-size:1.15rem;        /* bigger text */
+      line-height:1;
+      padding:10px 14px;        /* bigger click target */
+      border-radius:10px;
+      color:#0366d6;
+      text-decoration:none;
+      border:1px solid transparent;
     }
-    .bar-inner {
-      max-width: 880px;
-      margin: 0 auto;
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .nav .tab:hover { background:#f4f6f8; text-decoration:none; }
+    .nav .tab:focus-visible { outline:2px solid #9ac7ff; outline-offset:2px; }
+
+    /* About: photo + intro */
+    .hero { display:flex; gap:24px; align-items:center; }
+    .hero img { width:140px; height:140px; border-radius:50%; object-fit:cover; border:1px solid #ddd; }
+    .muted { color:#6b7280; }
+
+    /* Research items */
+    .paper { margin:16px 0; }
+    .paper h3 { margin:0 0 4px; font-size:1.05rem; }
+    .authors,.meta { color:#6b7280; font-size:.95rem; margin:0 0 6px; }
+    details { margin-top:6px; }
+
+    /* CV */
+    .btn { display:inline-block; border:1px solid #ddd; border-radius:999px; padding:8px 14px; background:#fafafa; color:#111; }
+    .btn:hover { background:#f2f2f2; }
+    .cv-frame { width:100%; height:820px; border:1px solid #eee; border-radius:12px; }
+
+    @media (max-width:640px){
+      .hero { flex-direction:column; align-items:flex-start; }
+      .cv-frame { height:72vh; }
     }
-    .brand {
-      font-weight: 500;
-      color: #111;
-      text-decoration: none;
-    }
-    nav a {
-      margin-left: 16px;
-      color: #0366d6;
-      text-decoration: none;
-    }
-    nav a:hover { text-decoration: underline; }
-    /* optional: placeholder content so #research link has somewhere to go */
-    main { max-width: 880px; margin: 24px auto; padding: 0 16px; }
   </style>
 </head>
 <body>
+  <!-- Top bar: name + left-aligned big buttons -->
   <header class="bar">
-    <div class="bar-inner">
-      <a class="brand" href="/">Sukgyu Shin</a>
-      <nav>
-        <a href="#research">Research</a>
-        <a href="cv.pdf">CV</a>
+    <div class="wrap bar-inner">
+      <a class="brand" href="#top">Your Name</a>
+      <nav class="nav" aria-label="Main">
+        <a class="tab" href="#about">About</a>
+        <a class="tab" href="#research">Research</a>
+        <a class="tab" href="#cv">CV</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="top" class="wrap">
+    <!-- About: photo + brief intro -->
+    <section id="about" class="card">
+      <div class="hero">
+        <!-- upload headshot.jpg to repo root -->
+        <img src="headshot.jpg" alt="Your Name portrait" />
+        <div>
+          <h1 style="margin:0">Your Name</h1>
+          <p class="muted" style="margin:.25rem 0 1rem">Ph.D. Student, Economics · Your University</p>
+          <p>2–4 sentences about your research interests and current work.</p>
+          <p><strong>Email:</strong> <a href="mailto:you@university.edu">you@university.edu</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research: paper + link + abstract -->
     <section id="research">
-      <!-- empty for now; we’ll fill this in next step -->
+      <h2>Research</h2>
+      <div class="card">
+        <article class="paper">
+          <h3><a href="papers/paper1.pdf">Paper Title</a></h3>
+          <p class="authors">Your Name, Coauthor</p>
+          <p class="meta">Working paper, 2025</p>
+          <p><a href="papers/paper1.pdf">PDF</a> · <a href="papers/paper1_slides.pdf">Slides</a> · <a href="#">Code</a></p>
+          <details><summary>Abstract</summary>
+            <p>Brief abstract (5–8 sentences).</p>
+          </details>
+        </article>
+      </div>
+    </section>
+
+    <!-- CV: download + embed -->
+    <section id="cv" class="card">
+      <h2>CV</h2>
+      <p><a class="btn" href="cv.pdf">Download CV (PDF)</a></p>
+      <!-- upload cv.pdf to repo root -->
+      <iframe class="cv-frame" src="cv.pdf" title="CV preview"></iframe>
     </section>
   </main>
 </body>
 </html>
+
 
 
